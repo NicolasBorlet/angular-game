@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ComponentCardItemComponent } from '../component-card-item/component-card-item.component'
 
 const f = FormGroup;
 
@@ -11,6 +10,7 @@ const f = FormGroup;
   templateUrl: './component-card.component.html',
   styleUrls: ['./component-card.component.scss']
 })
+
 export class ComponentCardComponent implements OnInit {
   data: any[] = [];
   newCard: any = {};
@@ -43,8 +43,4 @@ deleteCard(id: string) {
   // window.location.reload();
   });
 }
-
-showDetails(card: any) {
-  this.selectedCard = card;
-  }
 }

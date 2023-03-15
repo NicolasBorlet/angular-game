@@ -1,1 +1,7 @@
-<p>component-card-detail works!</p>
+<div class="card-details" *ngIf="selectedCard">
+  <!-- add new div to show details -->
+  <h3>Details</h3>
+  <p>ID: {{ selectedCard.id }}</p>
+  <p>Name: {{ selectedCard.name }}</p>
+  <p>Value: {{ selectedCard.value }}</p>
+</div>

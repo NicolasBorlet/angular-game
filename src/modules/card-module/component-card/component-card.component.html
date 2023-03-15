@@ -1,20 +1,5 @@
 <h2>Liste des cartes</h2>
-<div class="card-component">
-  <ul>
-    <li *ngFor="let item of data">
-      <app-card-item [item]="item"></app-card-item>
-      <button (click)="deleteCard(item.id)">Delete</button>
-      <button (click)="showDetails(item)">Détails</button>
-    </li>
-  </ul>
-  <div class="card-details" *ngIf="selectedCard">
-    <!-- add new div to show details -->
-    <h3>Details</h3>
-    <p>ID: {{ selectedCard.id }}</p>
-    <p>Name: {{ selectedCard.name }}</p>
-    <p>Value: {{ selectedCard.value }}</p>
-  </div>
-</div>
+<app-component-card-list></app-component-card-list>
 <div class="card-component-form">
   <h2>Ajouter une carte</h2>
   <form (submit)="onSubmit()">
