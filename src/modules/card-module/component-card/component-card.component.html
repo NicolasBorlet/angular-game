@@ -1,5 +1,31 @@
-<div>
-    <h2>
-        Ceci est le Composant Card
-    </h2>
+<h2>Liste des cartes</h2>
+<div class="card-component">
+  <ul>
+    <li *ngFor="let item of data">
+      <app-card-item [item]="item"></app-card-item>
+      <button (click)="deleteCard(item.id)">Delete</button>
+      <button (click)="showDetails(item)">Détails</button>
+    </li>
+  </ul>
+  <div class="card-details" *ngIf="selectedCard">
+    <!-- add new div to show details -->
+    <h3>Details</h3>
+    <p>ID: {{ selectedCard.id }}</p>
+    <p>Name: {{ selectedCard.name }}</p>
+    <p>Value: {{ selectedCard.value }}</p>
+  </div>
+</div>
+<div class="card-component-form">
+  <h2>Ajouter une carte</h2>
+  <form (submit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" [(ngModel)]="newCard.name" />
+    </div>
+    <div>
+      <label for="value">Value:</label>
+      <input name="value" [(ngModel)]="newCard.value" />
+    </div>
+    <button type="submit">Create Card</button>
+  </form>
 </div>
