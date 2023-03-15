@@ -1,7 +1,9 @@
-<div class="card-details" *ngIf="selectedCard">
-  <!-- add new div to show details -->
-  <h3>Details</h3>
-  <p>ID: {{ selectedCard.id }}</p>
-  <p>Name: {{ selectedCard.name }}</p>
-  <p>Value: {{ selectedCard.value }}</p>
+<div *ngIf="selectedCard">
+  <app-component-card-list></app-component-card-list>
+  <div class="card-details">
+    <h3>Details</h3>
+    <p>ID: {{ selectedCard.id }}</p>
+    <p>Name: {{ selectedCard.name }}</p>
+    <p>Value: {{ selectedCard.value }}</p>
+  </div>
 </div>

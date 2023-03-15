@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -17,7 +18,7 @@ export class ComponentCardListComponent implements OnInit {
   cards: any[] = [];
   selectedCard: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
 ngOnInit() {
   this.http.get<any[]>('http://localhost:3000/api/cards')
@@ -44,7 +45,7 @@ deleteCard(id: string) {
   });
 }
 
-  showDetails(card: any) {
-    this.selectedCard = card;
+  showDetails(id: string) {
+    this.router.navigateByUrl(`/card/${id}`);
   }
 }

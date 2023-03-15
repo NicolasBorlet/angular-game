@@ -3,10 +3,7 @@
     <li *ngFor="let item of data">
       <app-card-item [item]="item"></app-card-item>
       <button (click)="deleteCard(item.id)">Delete</button>
-      <button (click)="showDetails(item)">Détails</button>
+      <button [routerLink]="['/card', item.id]">Details</button>
     </li>
   </ul>
-  <app-component-card-detail
-    [selectedCard]="selectedCard"
-  ></app-component-card-detail>
 </div>
