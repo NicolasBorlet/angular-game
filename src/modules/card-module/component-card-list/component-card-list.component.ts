@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 const f = FormGroup;
@@ -33,15 +32,15 @@ onSubmit() {
   .subscribe(response => {
   this.data.push(response);
   this.newCard = {};
+  window.location.reload();
   });
 }
 
 deleteCard(id: string) {
   const url = `http://localhost:3000/api/cards/${id}`;
   return this.http.delete(url).subscribe(() => {
-    console.log(id);
   // this.cards = this.cards.filter(card => card.id !== id);
-  // window.location.reload();
+  window.location.reload();
   });
 }
 

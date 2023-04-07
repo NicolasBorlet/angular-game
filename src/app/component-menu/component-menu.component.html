@@ -1,5 +1,11 @@
 <ul>
-    <li><a routerLink="/component-home">Home</a></li>
-    <li><a routerLink="/">Start</a></li>
-    <li><a routerLink="/card">Card module component</a></li>
+  <li><a routerLink="/">Home</a></li>
+  <li><a routerLink="/card">Cartes</a></li>
+  <li><a routerLink="/deck">Decks</a></li>
+  <li *ngIf="token != null">
+    <a (click)="disconnect()">Disconnect</a>
+  </li>
+  <li *ngIf="token == null">
+    <a routerLink="/login">Login</a>
+  </li>
 </ul>

@@ -1,6 +1,5 @@
-<div *ngIf="selectedCard">
-  <app-component-card-list></app-component-card-list>
-  <div class="card-details">
+<div *ngIf="selectedCard" class="w-full">
+  <div>
     <h3>Details</h3>
     <p>ID: {{ selectedCard.id }}</p>
     <p>Name: {{ selectedCard.name }}</p>

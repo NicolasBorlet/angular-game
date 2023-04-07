@@ -6,9 +6,9 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 const f = FormGroup;
 
 @Component({
-  selector: 'app-component-card',
-  templateUrl: './component-card.component.html',
-  styleUrls: ['./component-card.component.scss']
+  selector: 'app-component-add-card',
+  templateUrl: './component-add-card.component.html',
+  styleUrls: ['./component-add-card.component.scss']
 })
 
 export class ComponentCardComponent implements OnInit {
