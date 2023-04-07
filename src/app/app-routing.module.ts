@@ -19,7 +19,9 @@ const routes: Routes = [
   {
     path: 'deck',
     loadChildren: () =>
-      import('../modules/deck/deck.module').then((m) => m.DeckModule),
+      import('../modules/deck-module/deck-module.module').then(
+        (m) => m.DeckModule
+      ),
   },
 ];
 
