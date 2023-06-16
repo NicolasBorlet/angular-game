@@ -1,0 +1,78 @@
+<div class="px-10">
+  <div class="mb-5">
+    <p>Cartes actuellement sélectionnées:</p>
+    <div class="flex gap-3">
+      <div *ngFor="let item of selectedCard" class="w-[200px] h-[300px] flex">
+        <div
+          style="
+            background-image: url(../../../assets/Card-evolute-deck-master.webp);
+            background-repeat: no-repeat;
+            background-size: contain;
+          "
+          class="h-full p-2.5"
+        >
+          <div class="flex justify-between mb-3">
+            <h3 class="text-[#a49c80] text-lg">{{ item.name }}</h3>
+          </div>
+          <div>
+            <img class="h-[140px] w-full" src="https://picsum.photos/200/300" alt="Image aléatoire" />
+          </div>
+          <div class="flex justify-between pl-2">
+            <p class="text-black font-bold">ID:</p>
+            <p class="text-black">{{ item.id }}</p>
+          </div>
+          <div>
+            <button
+              (click)="removeFromDeck(item.id)"
+              class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Supprimer du deck
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center flex-col justify-center">
+        <input [(ngModel)]="deckName" type="text" placeholder="Nom du deck" />
+
+        <!-- Modifier le bouton pour passer la valeur du champ de saisie à la méthode addDeck -->
+        <button
+          (click)="addDeck(deckName)"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Ajouter le deck
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex gap-3">
+    <div *ngFor="let item of data" class="w-[200px] h-[300px]">
+      <div
+        style="
+          background-image: url(../../../assets/Card-evolute-deck-master.webp);
+          background-repeat: no-repeat;
+          background-size: contain;
+        "
+        class="h-full p-2.5"
+      >
+        <div class="flex justify-between mb-3">
+          <h3 class="text-[#a49c80] text-lg">{{ item.name }}</h3>
+        </div>
+        <div>
+          <img class="h-[140px] w-full" src="https://picsum.photos/200/300" alt="Image aléatoire" />
+        </div>
+        <div class="flex justify-between pl-2">
+          <p class="text-black font-bold">ID:</p>
+          <p class="text-black">{{ item.id }}</p>
+        </div>
+        <div class="text-center">
+          <button
+            (click)="addToDeck(item.id)"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Add to deck
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

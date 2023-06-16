@@ -7,6 +7,8 @@ import { ComponentCardItemComponent } from './component-card-item/component-card
 import { FormsModule } from '@angular/forms';
 import { CardModuleRootingModule } from './card-module-rooting.module';
 import { CardComponent } from './card.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyInterceptor } from './card-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { CardComponent } from './card.component';
     ComponentCardDetailComponent,
   ],
   imports: [CardModuleRootingModule, CommonModule, FormsModule],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true },
+  ],
 })
 export class CardModule {}

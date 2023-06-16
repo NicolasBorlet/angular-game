@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CardService } from 'src/modules/card-module/card.service';
+import { AppService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private authService: CardService, private router: Router) {}
+  constructor(private authService: AppService, private router: Router) {}
 
   login() {
     if (this.authService.login(this.email, this.password)) {

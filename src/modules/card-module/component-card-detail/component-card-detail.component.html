@@ -1,8 +1,27 @@
-<div *ngIf="selectedCard" class="w-full">
-  <div>
-    <h3>Details</h3>
-    <p>ID: {{ selectedCard.id }}</p>
-    <p>Name: {{ selectedCard.name }}</p>
-    <p>Value: {{ selectedCard.value }}</p>
+<div *ngIf="selectedCard" class="w-[200px] h-[300px]">
+  <div
+    style="
+      background-image: url(../../../assets/Card-evolute-deck-master.webp);
+      background-repeat: no-repeat;
+      background-size: contain;
+    "
+    class="h-full p-2.5"
+  >
+    <div class="flex justify-between">
+      <h3 class="text-[#a49c80] text-lg">{{ selectedCard.name }}</h3>
+    </div>
+    <div class="flex justify-end gap-1.5">
+      <div *ngFor="let circle of generateCircles()">
+        <img
+          src="../../../assets/star.png"
+          alt="star"
+          class="w-[13px] h-[13px]"
+        />
+      </div>
+    </div>
+    <div class="flex justify-between pl-2">
+      <p class="text-black font-bold">ID:</p>
+      <p class="text-black">{{ selectedCard.id }}</p>
+    </div>
   </div>
 </div>

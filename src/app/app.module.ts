@@ -13,9 +13,7 @@ import { LoginModule } from 'src/modules/login-module/login.module';
 @NgModule({
   declarations: [AppComponent, ComponentHomeComponent, ComponentMenuComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, LoginModule],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true },
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

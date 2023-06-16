@@ -1,1 +1,32 @@
-<p>component-deck-list works!</p>
+<div class="overflow-x-auto border rounded-md shadow-sm dark:border-gray-700">
+  <table class="min-w-full bg-white rounded whitespace-nowrap">
+    <thead class="border-b bg-gray-50">
+      <tr>
+        <th class="px-3 py-3 text-center">Name</th>
+        <th class="px-3 py-3 text-center">Delete</th>
+        <th class="px-3 py-3 text-center">Détails</th>
+      </tr>
+    </thead>
+    <tbody class="text-sm bg-white divide-y divide-gray-200">
+      <tr *ngFor="let item of data">
+        <td class="px-3 py-4 text-gray-600 text-center">{{ item.name }}</td>
+        <td class="px-3 py-4 text-gray-600 text-center">
+          <button
+            (click)="deleteDeck(item.id)"
+            class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+          >
+            Delete
+          </button>
+        </td>
+        <td class="px-3 py-4 text-gray-600 text-center">
+          <button
+            [routerLink]="['/deck', item.id]"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Details
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
